@@ -5,17 +5,19 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
 
 @Module({
   imports: [
-    ClientsModule.register([
+    ClientsModule.registerAsync([
       {
         name: 'RABBITMQ_SERVICE',
-        transport: Transport.RMQ,
-        options: {
-          urls: ['amqp://admin:admin@localhost:5672'],
-          queue: 'orders_queue',
-          queueOptions: {
-            durable: true,
+        useFactory: () => ({
+          transport: Transport.RMQ,
+          options: {
+            urls: ['amqp://admin:admin@localhost:5672'],
+            queue: 'orders_queue',
+            queueOptions: {
+              durable: true,
+            },
           },
-        },
+        }),
       },
     ]),
   ],
