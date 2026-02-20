@@ -1,0 +1,40 @@
+npm i class-validator class-transformer
+npm i amqplib amqp-connection-manager @nestjs/microservices
+npm i @nestjs/config
+
+POST  
+http://localhost:3000/orders
+{
+  "customerId": "12321",
+  "items": [
+    {
+      "productId": "12332",
+      "quantity": 2,
+      "unitPrice": 111.90
+    },
+    {
+      "productId": "44444",
+      "quantity": 1,
+      "unitPrice": 90
+    }
+  ],
+  "payment": {
+    "method": "CREDIT_CARD",
+    "installment": 1
+  },
+  "delivery": {
+    "addressId": "jp2031"
+  }
+}
+
+c
+
+SMTP -> Regras para e-mail
+AMQP -> Regras para mensageria
+
+Producer -> Quem Envia
+Exchange -> Quem decide o caminho
+Queue -> Onde a mensagem fica
+Binding -> Regra de Roteamento
+Routing Key -> Etiqueta da mensagem
+ACK/NACK -> Confirmação e processamento
