@@ -11,7 +11,7 @@ import {
 class ItemDto {
   @IsNotEmpty()
   @IsString()
-  productd: string;
+  productId: string;
 
   @IsNotEmpty()
   @IsInt()
