@@ -27,7 +27,10 @@ http://localhost:3000/orders
   }
 }
 
-c
+@IsNotEmpty()	Garante que o campo não está vazio
+@ValidateNested()	Valida os objetos internos
+@ValidateNested({ each: true })	Valida cada item de um array
+@Type(() => Classe)	Permite transformar JSON em instância da classe
 
 SMTP -> Regras para e-mail
 AMQP -> Regras para mensageria
