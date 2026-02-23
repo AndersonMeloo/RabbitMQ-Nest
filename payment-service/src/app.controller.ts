@@ -8,6 +8,6 @@ export class AppController {
 
   @EventPattern('order_created')
   payment(order: any) {
-    console.log(order);
+    console.log(order, 'PAYMENT-SERVICE');
   }
 }
