@@ -1,16 +1,13 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { ClientProxy } from '@nestjs/microservices';
+import { Injectable } from '@nestjs/common';
 import { CreateOrderDto } from './dto/CreateOrderDto';
+import { RabbitMQProvider } from 'src/providers/RabbitMQProvider';
 
 @Injectable()
 export class OrderService {
-  constructor(
-    @Inject('RABBITMQ_SERVICE')
-    private readonly client: ClientProxy,
-  ) {}
+  constructor(private readonly rabbitMQProvider: RabbitMQProvider) {}
 
   save(order: CreateOrderDto) {
-    this.client.emit('order_created', order);
+    this.rabbitMQProvider.publish('orders.exchange', 'order.created', order);
     return order;
   }
 }
