@@ -1,10 +1,11 @@
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import amqp, { Connection, Channel } from 'amqplib';
+import * as amqp from 'amqplib';
+import type { Channel, ChannelModel } from 'amqplib';
 
 @Injectable()
 export class RabbitMQProvider implements OnModuleInit {
-  private connection!: Connection;
+  private connection!: ChannelModel;
   private channel!: Channel;
 
   constructor(private readonly configService: ConfigService) {}
