@@ -41,3 +41,5 @@ Queue -> Onde a mensagem fica
 Binding -> Regra de Roteamento
 Routing Key -> Etiqueta da mensagem
 ACK/NACK -> Confirmação e processamento
+
+payment-service -> npm i @nestjs/config
