@@ -7,7 +7,10 @@ async function bootstrap() {
     transport: Transport.RMQ,
     options: {
       urls: ['amqp://admin:admin@localhost:5672'],
-      queue: 'orders_queue',
+      queue: 'inventory.order.created',
+      exchange: 'orders.exchange',
+      exchangeType: 'topic',
+      routingKey: 'order.created',
       queueOptions: {
         durable: true,
       },
