@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { CreatedOrderDto } from 'src/dtos/CreatedOrderDto';
 
 @Injectable()
 export class KiwifyGateway {
-  paymentProccess(data: any) {
+  paymentProccess(data: CreatedOrderDto) {
     console.log('Processing payment with KiwifyGateway', data);
   }
 }
