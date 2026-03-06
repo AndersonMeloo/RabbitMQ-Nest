@@ -1,13 +1,12 @@
 import { Controller } from '@nestjs/common';
-import { AppService } from './app.service';
 import { EventPattern } from '@nestjs/microservices';
+import { KiwifyGateway } from './gateways/payment/KiwifyGateway';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
-
+  constructor(private readonly kwifyGateway: KiwifyGateway) {}
   @EventPattern('order.created')
   payment(order: any) {
-    console.log(order, 'PAYMENT-SERVICE');
+    this.kwifyGateway.paymentProccess(order);
   }
 }
