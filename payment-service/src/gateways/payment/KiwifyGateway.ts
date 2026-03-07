@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CreatedOrderDto } from 'src/dtos/CreatedOrderDto';
+import { CreatedOrderDto } from '../../dtos/CreatedOrderDto';
 
 @Injectable()
 export class KiwifyGateway {
