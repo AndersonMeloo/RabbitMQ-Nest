@@ -1,11 +1,10 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Transport } from '@nestjs/microservices';
-import { AppController } from './app.controller';
 import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
-  const appContext = await NestFactory.createApplicationContext(AppController);
+  const appContext = await NestFactory.createApplicationContext(AppModule);
   const configService = appContext.get(ConfigService);
   const routingKey = configService.getOrThrow<string>('RABBIT_ORDER_KEY');
 
