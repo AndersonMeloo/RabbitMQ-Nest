@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CreatedOrderDto } from '../../payment-service/src/dtos/CreatedOrderDto';
+import { CreatedOrderDto } from './dtos/CreatedOrderDto';
 import { KiwifyGateway } from './gateways/payment/KiwifyGateway';
 import { Retry } from './decorators/retry.decorator';
 
