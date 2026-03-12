@@ -45,3 +45,5 @@ Routing Key -> Etiqueta da mensagem
 ACK/NACK -> Confirmação e processamento
 
 payment-service -> npm i @nestjs/config
+
+Remove-Item -Recurse -Force .\payment-dql-service\.git
