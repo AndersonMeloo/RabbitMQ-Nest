@@ -2,6 +2,8 @@ npm i class-validator class-transformer
 npm i amqplib amqp-connection-manager @nestjs/microservices
 npm i @nestjs/config
 
+npm i -D @types/amqplib
+
 POST  
 http://localhost:3000/orders
 {
